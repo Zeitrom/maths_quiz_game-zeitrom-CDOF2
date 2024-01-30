@@ -9,12 +9,16 @@ class QuizGame:
     def generate_question(self):
         operand1 = random.randint(-100, 100)
         operand2 = random.randint(-100, 100)
-        operator = random.choice(['+', '-'])
+        operator = random.choice(['+', '-', '*', '/']) # Added * and / operators
 
         if operator == '+':
             correct_answer = operand1 + operand2
         elif operator == '-':
             correct_answer = operand1 - operand2
+        elif operator == '*':
+            correct_answer = operand1 * operand2
+        elif operator == '/':
+            correct_answer = operand1 / operand2
 
         return {
             'text': f"What is {operand1} {operator} {operand2}?",
