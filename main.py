@@ -21,7 +21,7 @@ class QuizGame:
             'correct_option': correct_answer
         }
 
-    def ask_question(self, time_limit=5):
+    def ask_question(self, time_limit=10):
         question = self.generate_question()
         print(question['text'])
 
@@ -48,6 +48,6 @@ class QuizGame:
             self.ask_question()
         print(f"Game Over! Your final score: {self.score}")
 
-# Create and play the game
+
 quiz = QuizGame(num_questions=10)
 quiz.play()
