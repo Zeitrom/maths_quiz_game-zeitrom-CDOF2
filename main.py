@@ -34,8 +34,14 @@ class QuizGame:
         question = self.generate_question()
         print(question['text'])
 
+        while True:
+            try:
+                user_answer = float(input("Your answer: "))
+                break  # Break out of the loop if the input is successfully converted to float
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric answer.")
+
         start_time = time.time()
-        user_answer = float(input("Your answer: "))
         end_time = time.time()
 
         time_taken = end_time - start_time
@@ -57,6 +63,6 @@ class QuizGame:
             self.ask_question()
         print(f"Game Over! Your final score: {self.score}")
 
-
+# Create an instance of the QuizGame and start playing
 quiz = QuizGame(num_questions=10)
 quiz.play()
