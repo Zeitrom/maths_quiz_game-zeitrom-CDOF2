@@ -9,12 +9,21 @@ class QuizGame:
     def generate_question(self):
         operand1 = random.randint(-100, 100)
         operand2 = random.randint(-100, 100)
-        operator = random.choice(['+', '-'])
+        operator = random.choice(['+', '-', '*', '/'])
 
         if operator == '+':
             correct_answer = operand1 + operand2
         elif operator == '-':
             correct_answer = operand1 - operand2
+        elif operator == '*':
+            correct_answer = operand1 * operand2
+        elif operator == '/':
+            # Ensure the division is valid and not resulting in fractional answers
+            if operand2 != 0 and operand1 % operand2 == 0:
+                correct_answer = operand1 // operand2
+            else:
+                # If division is not valid, generate a new question
+                return self.generate_question()
 
         return {
             'text': f"What is {operand1} {operator} {operand2}?",
