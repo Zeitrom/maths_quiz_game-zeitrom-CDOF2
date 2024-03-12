@@ -18,7 +18,8 @@ Create a New Branch: Develop your feature or fix a bug in a new branch:
  ```bash
 git checkout -b feature-name
  ```
-Make Changes and Commit: Implement your changes and commit them with a descriptive message:
+Make Your Changes: Implement your feature, fix a bug, or make improvements where you see fit.
+Commit Your Changes with a Descriptive Message 
  ```bash
 git add .
 git commit -m "Brief description of your changes"
